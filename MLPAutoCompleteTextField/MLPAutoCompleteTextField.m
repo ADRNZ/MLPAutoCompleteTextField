@@ -434,15 +434,10 @@ withAutoCompleteString:(NSString *)string
             }
         }
         
-        [self.superview bringSubviewToFront:self];
-#if BROKEN
-        UIView *rootView = [self.window.subviews objectAtIndex:0];
-        [rootView insertSubview:self.autoCompleteTableView
-                   belowSubview:self];
-#else
-        [self.superview insertSubview:self.autoCompleteTableView
-                         belowSubview:self];
-#endif
+        UIView* v = self.autoCompleteParentView ? self.autoCompleteParentView : self.superview;
+        [v bringSubviewToFront:self];
+        [v insertSubview:self.autoCompleteTableView
+                          belowSubview:self];
         [self.autoCompleteTableView setUserInteractionEnabled:YES];
         if(self.showTextFieldDropShadowWhenAutoCompleteTableIsOpen){
             [self.layer setShadowColor:[[UIColor blackColor] CGColor]];
