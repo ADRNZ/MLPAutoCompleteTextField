@@ -67,6 +67,7 @@
 @property (strong) UIColor *autoCompleteTableCellBackgroundColor;
 @property (strong) UIColor *autoCompleteTableCellTextColor;
 @property (weak, nonatomic) UIView* autoCompleteParentView;
+@property (weak, nonatomic) UIView* myAncestorInParentView;
 
 
 - (void)registerAutoCompleteCellNib:(UINib *)nib forCellReuseIdentifier:(NSString *)reuseIdentifier;

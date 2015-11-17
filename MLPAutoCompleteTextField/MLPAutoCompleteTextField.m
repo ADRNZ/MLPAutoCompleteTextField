@@ -437,7 +437,7 @@ withAutoCompleteString:(NSString *)string
         UIView* v = self.autoCompleteParentView ? self.autoCompleteParentView : self.superview;
         [v bringSubviewToFront:self];
         [v insertSubview:self.autoCompleteTableView
-                          aboveSubview:self];
+                          aboveSubview:self.myAncestorInParentView];
         [self.autoCompleteTableView setUserInteractionEnabled:YES];
         if(self.showTextFieldDropShadowWhenAutoCompleteTableIsOpen){
             [self.layer setShadowColor:[[UIColor blackColor] CGColor]];
